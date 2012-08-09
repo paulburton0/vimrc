@@ -78,12 +78,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Remove useless splash screen
-set shortmess+=|
-
-map <F9> :e $HOME/.vim_runtime/vimrc<CR>
-map <F6> :so $HOME/.vimrc<CR>
-
 " Sets how many lines of history VIM has to remember
 set history=300
 
@@ -98,7 +92,6 @@ set autoread
 " like <leader>w saves the current file
 let mapleader = ","
 let g:mapleader = ","
-set showcmd
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -477,8 +470,8 @@ let g:miniBufExplorerMoreThanOne = 2
 let g:miniBufExplModSelTarget = 0
 let g:miniBufExplUseSingleClick = 1
 let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplVSplit = 16
-let g:miniBufExplSplitBelow=1
+let g:miniBufExplVSplit = 0 
+let g:miniBufExplSplitBelow=0
 let g:bufExplorerSortBy = "name"
 
 autocmd BufRead,BufNew :call UMiniBufExplorer
@@ -537,13 +530,6 @@ au FileType javascript imap <c-a> alert();<esc>hi
 
 au FileType javascript inoremap <buffer> $r return 
 au FileType javascript inoremap <buffer> $f //--- PH ----------------------------------------------<esc>FP2xi
-
-" pretty-print JSON files
-autocmd BufRead,BufNewFile *.json set filetype=json
-" json.vim is here: http://www.vim.org/scripts/script.php?script_id=1945
-"autocmd Syntax json sou ~/.vim/syntax/json.vim
-" json_reformat is part of yajl: http://lloyd.github.com/yajl/
-autocmd FileType json set equalprg=json_reformat
 
 function! JavaScriptFold() 
     setl foldmethod=syntax
