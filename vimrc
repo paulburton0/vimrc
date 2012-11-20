@@ -636,3 +636,7 @@ inoremap <silent> <C-Down> <C-o>:call MoveLineDown()<CR>
 "vnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
 xnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
 xnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
+
+let xml_jump_string = "'"
+let g:xml_jump_string = "'"
+
