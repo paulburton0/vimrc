@@ -186,6 +186,10 @@ set nobackup
 set nowb
 set noswapfile
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Folding
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set foldmethod=syntax
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
@@ -517,6 +521,11 @@ au FileType python map <buffer> <leader>2 /def
 au FileType python map <buffer> <leader>C ?class 
 au FileType python map <buffer> <leader>D ?def 
 
+""""""""""""""""""""""""""""""
+" => Perl section
+"""""""""""""""""""""""""""""""
+let perl_fold=1
+
 
 """"""""""""""""""""""""""""""
 " => JavaScript section
@@ -556,7 +565,7 @@ endtry
 """"""""""""""""""""""""""""""
 " => Vim grep
 """"""""""""""""""""""""""""""
-let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated'
+let Grep_Skip_Dirs = 'RCS CVS SCCS .svn generated .git'
 set grepprg=/bin/grep\ -nH
 
 
@@ -568,3 +577,62 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 "Quickly open a buffer for scripbble
 map <leader>q :e ~/buffer<cr>
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Transpose lines
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Allows you to move a line (or multiple lines) of text up or down within a document using the <Control> and <Up>/<Down> arrow keys. The mappings all take a count so 5<C-Up> would move the current line (or visual selection) 5 lines up.
+
+function! MoveLineUp()
+  call MoveLineOrVisualUp(".", "")
+endfunction
+
+function! MoveLineDown()
+  call MoveLineOrVisualDown(".", "")
+endfunction
+
+function! MoveVisualUp()
+  call MoveLineOrVisualUp("'<", "'<,'>")
+  normal gv
+endfunction
+
+function! MoveVisualDown()
+  call MoveLineOrVisualDown("'>", "'<,'>")
+  normal gv
+endfunction
+
+function! MoveLineOrVisualUp(line_getter, range)
+  let l_num = line(a:line_getter)
+  if l_num - v:count1 - 1 < 0
+    let move_arg = "0"
+  else
+    let move_arg = a:line_getter." -".(v:count1 + 1)
+  endif
+  call MoveLineOrVisualUpOrDown(a:range."move ".move_arg)
+endfunction
+
+function! MoveLineOrVisualDown(line_getter, range)
+  let l_num = line(a:line_getter)
+  if l_num + v:count1 > line("$")
+    let move_arg = "$"
+  else
+    let move_arg = a:line_getter." +".v:count1
+  endif
+  call MoveLineOrVisualUpOrDown(a:range."move ".move_arg)
+endfunction
+
+function! MoveLineOrVisualUpOrDown(move_arg)
+  let col_num = virtcol(".")
+  execute "silent! ".a:move_arg
+  execute "normal! ".col_num."|"
+endfunction
+
+nnoremap <silent> <C-Up> :<C-u>call MoveLineUp()<CR>
+nnoremap <silent> <C-Down> :<C-u>call MoveLineDown()<CR>
+inoremap <silent> <C-Up> <C-o>:call MoveLineUp()<CR>
+inoremap <silent> <C-Down> <C-o>:call MoveLineDown()<CR>
+"vnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
+"vnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
+xnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
+xnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>

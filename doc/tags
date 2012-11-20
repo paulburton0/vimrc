@@ -262,6 +262,12 @@ surround-replacements	surround.txt	/*surround-replacements*
 surround-targets	surround.txt	/*surround-targets*
 surround.txt	surround.txt	/*surround.txt*
 vs	surround.txt	/*vs*
+xml-plugin-callbacks	xml-plugin.txt	/*xml-plugin-callbacks*
+xml-plugin-filetypes	xml-plugin.txt	/*xml-plugin-filetypes*
+xml-plugin-html	xml-plugin.txt	/*xml-plugin-html*
+xml-plugin-mappings	xml-plugin.txt	/*xml-plugin-mappings*
+xml-plugin-settings	xml-plugin.txt	/*xml-plugin-settings*
+xml-plugin.txt	xml-plugin.txt	/*xml-plugin.txt*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
 yankring	yankring.txt	/*yankring*
