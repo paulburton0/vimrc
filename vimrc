@@ -93,11 +93,14 @@ set autoread
 let mapleader = ","
 let g:mapleader = ","
 
+" Remove useless splash screen
+set shortmess+=|
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>e :e! ~/.vim_runtime/vimrc<cr>
+map <F9> :e $HOME/.vim_runtime/vimrc<cr>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
@@ -640,3 +643,6 @@ xnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
 let xml_jump_string = "'"
 let g:xml_jump_string = "'"
 
+" GPG Plugin options
+let g:GPGPreferArmor = 1
+let g:GPGDefaultRecipients = ["PaulBurton0@gmail.com"]
