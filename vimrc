@@ -631,14 +631,14 @@ function! MoveLineOrVisualUpOrDown(move_arg)
   execute "normal! ".col_num."|"
 endfunction
 
-nnoremap <silent> <C-Up> :<C-u>call MoveLineUp()<CR>
-nnoremap <silent> <C-Down> :<C-u>call MoveLineDown()<CR>
-inoremap <silent> <C-Up> <C-o>:call MoveLineUp()<CR>
-inoremap <silent> <C-Down> <C-o>:call MoveLineDown()<CR>
+nnoremap <silent> <C-k> :<C-u>call MoveLineUp()<CR>
+nnoremap <silent> <C-j> :<C-u>call MoveLineDown()<CR>
+inoremap <silent> <C-k> <C-o>:call MoveLineUp()<CR>
+inoremap <silent> <C-j> <C-o>:call MoveLineDown()<CR>
 "vnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
 "vnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
-xnoremap <silent> <C-Up> :<C-u>call MoveVisualUp()<CR>
-xnoremap <silent> <C-Down> :<C-u>call MoveVisualDown()<CR>
+xnoremap <silent> <C-k> :<C-u>call MoveVisualUp()<CR>
+xnoremap <silent> <C-j> :<C-u>call MoveVisualDown()<CR>
 
 let xml_jump_string = "'"
 let g:xml_jump_string = "'"
