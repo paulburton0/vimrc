@@ -646,3 +646,4 @@ let g:xml_jump_string = "'"
 " GPG Plugin options
 let g:GPGPreferArmor = 1
 let g:GPGDefaultRecipients = ["PaulBurton0@gmail.com"]
+let g:GPGUseAgent = 0
