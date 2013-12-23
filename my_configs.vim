@@ -75,3 +75,10 @@ let g:xml_jump_string = "'"
 let g:GPGPreferArmor = 1
 let g:GPGDefaultRecipients = ["PaulBurton0@gmail.com"]
 let g:GPGUseAgent = 0
+
+" BlogIt Options
+"
+let blogit_username='pburton'
+let blogit_password='L1nd3R1910'
+let blogit_url='http://blog.paul-burton.com/xmlrpc.php'
+
