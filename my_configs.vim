@@ -5,6 +5,14 @@ map <F9> :e $HOME/.vim_runtime/my_configs.vim<cr>
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 
+"copy and paste
+"vmap <C-c> "+yi
+"vmap <C-x> "+c
+"vmap <C-v> c<ESC>"+p
+"imap <C-v> <ESC>"+pa
+map <C-v> "+pa
+
+
 """"""""""""""""""""""""""""""
 " => Perl section
 """""""""""""""""""""""""""""""
