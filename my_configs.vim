@@ -7,6 +7,8 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 
 map <leader>z ggVGzO
 
+nnoremap <silent> <F11> :YRShow<CR>
+
 "copy and paste
 "vmap <C-c> "+yi
 "vmap <C-x> "+c
@@ -83,7 +85,7 @@ let g:xml_jump_string = "'"
 
 " GPG Plugin options
 let g:GPGPreferArmor = 1
-let g:GPGDefaultRecipients = ["PaulBurton0@gmail.com"]
+let g:GPGDefaultRecipients = ["6E1D7466"]
 let g:GPGUseAgent = 0
 
 " BlogIt Options
@@ -92,3 +94,5 @@ let blogit_username='pburton'
 let blogit_password='L1nd3R1910'
 let blogit_url='http://blog.paul-burton.com/xmlrpc.php'
 
+autocmd! BufNew,BufRead *.gpg setlocal textwidth=80
+autocmd! BufNew,BufRead *.txt setlocal textwidth=80
