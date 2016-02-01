@@ -1,4 +1,4 @@
-
+autocmd User GnuPG setl textwidth=80
 " Fast editing of the .vimrc
 map <F9> :e $HOME/.vim_runtime/my_configs.vim<cr>
 

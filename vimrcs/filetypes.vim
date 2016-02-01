@@ -1,3 +1,5 @@
+au BufNewfile,BufRead *.txt set tw=80
+
 """"""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
