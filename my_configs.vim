@@ -88,11 +88,5 @@ let g:GPGPreferArmor = 1
 let g:GPGDefaultRecipients = ["6E1D7466"]
 let g:GPGUseAgent = 0
 
-" BlogIt Options
-"
-let blogit_username='pburton'
-let blogit_password='L1nd3R1910'
-let blogit_url='http://blog.paul-burton.com/xmlrpc.php'
-
 autocmd! BufNew,BufRead *.gpg setlocal textwidth=80
 autocmd! BufNew,BufRead *.txt setlocal textwidth=80
