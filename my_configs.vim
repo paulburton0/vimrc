@@ -90,3 +90,7 @@ let g:GPGUseAgent = 0
 
 autocmd! BufNew,BufRead *.gpg setlocal textwidth=80
 autocmd! BufNew,BufRead *.txt setlocal textwidth=80
+
+let g:vim_markdown_folding_disabled = 1
+set conceallevel=2
+let g:vim_markdown_autowrite = 1
