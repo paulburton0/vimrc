@@ -85,7 +85,7 @@ let g:xml_jump_string = "'"
 
 " GPG Plugin options
 let g:GPGPreferArmor = 1
-let g:GPGDefaultRecipients = ["6E1D7466"]
+let g:GPGDefaultRecipients = ["6E36D9ED"]
 let g:GPGUseAgent = 0
 
 autocmd! BufNew,BufRead *.gpg setlocal textwidth=80
