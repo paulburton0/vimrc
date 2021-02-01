@@ -2,6 +2,10 @@ autocmd User GnuPG setl textwidth=80
 " Fast editing of the .vimrc
 map <F9> :e $HOME/.vim_runtime/my_configs.vim<cr>
 
+if has('gui_running')
+  set guifont=Consolas:h10
+endif
+
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 
