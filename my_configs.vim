@@ -98,3 +98,5 @@ autocmd! BufNew,BufRead *.txt setlocal textwidth=80
 let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 let g:vim_markdown_autowrite = 1
+
+let g:snipMate = { 'snippet_version' : 1 }
