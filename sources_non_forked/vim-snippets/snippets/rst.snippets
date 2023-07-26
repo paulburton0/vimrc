@@ -1,69 +1,101 @@
 # rst
 
 snippet :
-	:${1:field name}: ${2:field body}
+	:${1:field name}: $0
 snippet *
-	*${1:Emphasis}* ${2}
+	*${1:Emphasis}* ${0}
 snippet **
-	**${1:Strong emphasis}** ${2}
+	**${1:Strong emphasis}** ${0}
 snippet _
 	\`${1:hyperlink-name}\`_
-	.. _\`$1\`: ${2:link-block}
+	.. _\`$1\`: ${0:link-block}
 snippet =
 	${1:Title}
 	=====${2:=}
-	${3}
+	${0}
 snippet -
 	${1:Title}
 	-----${2:-}
-	${3}
+	${0}
 #some directive
 snippet img:
-	.. |${2:alias}| image:: ${1:img}
+	.. |${1:alias}| image:: ${0:img}
 snippet fig:
 	.. figure:: ${1:img}
 		:alt: ${2:alter text}
 
-		$2
-snippet cont:
-	.. contents::
-		${1:content}
-snippet code:
+		$0
+snippet con:
+	.. contents:: ${1:Table of Contents}
+
+		${0:content}
+snippet cod:
 	.. code:: ${1:type}
 
-		${2:write some code}
+		${0:write some code}
 snippet tip:
 	.. tip::
-		${1:my tips}
+		${0:my tips}
 snippet not:
 	.. note::
-		${1:my notes}
+		${0:my notes}
 snippet	war:
 	.. warning::
-		${1:attention!}
+		${0:attention!}
 snippet imp:
 	.. important::
-		${1:this is importatnt}
+		${0:this is importatnt}
 snippet att:
 	.. attention::
-		${1:hey!}
+		${0:hey!}
 snippet dan:
 	.. danger::
-		${1:ah!}
+		${0:ah!}
 snippet err:
 	.. error::
-		${1:Error occur}
+		${0:Error occur}
 snippet cau:
 	.. caution::
-		${1:Watch out!}
-#Spinx only
+		${0:Watch out!}
+#Sphinx only
 snippet sid:
 	.. sidebar:: ${1:Title}
 
-		${2}
+		${0}
+snippet tod:
+	.. todo::
+		${0}
+snippet lis:
+	.. list-table:: ${1:Title}
+		:header-rows: 1
+		:stub-columns: 0
+
+		* - ${0:R1C1}
+		  - R1C2
+		* - R2C1
+		  - R2C2
+snippet csv:
+	.. csv-table:: ${1:Title}
+		:header-rows: 1
+		:stub-columns: 0
+
+		${0:R1C1}, R1C2
+		R2C1, R2C2
+snippet toc:
+	.. toctree::
+		:maxdepth: 2
+
+		${0}
+snippet dow:
+	:download:\`${1:text} <${0:path}>\`
+snippet ref:
+	:ref:\`${1:text} <${0:path}>\`
+snippet doc:
+	:doc:\`${1:text} <${0:path}>\`
 # CJK optimize, CJK has no space between charaters
 snippet *c
-	\ *${1:Emphasis}*\ ${2}
+	\ *${1:Emphasis}*\ ${0}
 snippet **c
-	\ **${1:Strong emphasis}**\ ${2}
+	\ **${1:Strong emphasis}**\ ${0}
 
+# vim:set list noet sts=0 sw=4 ts=4:
